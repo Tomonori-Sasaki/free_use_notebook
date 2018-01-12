@@ -1,6 +1,6 @@
 <%= form_with(model: to_do, local: true) do |form| %>
   <% if to_do.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="alert alert-danger">
       <h2><%= pluralize(to_do.errors.count, "error") %> prohibited this to_do from being saved:</h2>
 
       <ul>
@@ -13,20 +13,20 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :to_do_name %>
-  </div>
+    <%= form.text_field :name, id: :to_do_name, class: "form-control" %>
+  </div><br>
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content, id: :to_do_content %>
-  </div>
+    <%= form.text_area :content, id: :to_do_content, class: "form-control", style: "height: 200px;" %>
+  </div><br>
 
-  <div class="field">
+  <div class="field" style="text-align: center;">
     <%= form.label :deadline %>
     <%= form.date_select :deadline, id: :to_do_deadline %>
-  </div>
+  </div><br>
 
-  <div class="actions">
+  <div class="actions" style="text-align: center;">
     <%= form.submit %>
-  </div>
+  </div><br>
 <% end %>

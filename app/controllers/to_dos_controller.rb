@@ -4,7 +4,7 @@ class ToDosController < ApplicationController
   # GET /to_dos
   # GET /to_dos.json
   def index
-    @to_dos = ToDo.all
+    @to_dos = ToDo.search(params[:search]).order(:deadline)
   end
 
   # GET /to_dos/1

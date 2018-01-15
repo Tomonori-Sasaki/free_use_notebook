@@ -7,16 +7,48 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<%= link_to 'FreeNote', '', class: "navbar-brand" %>
+			<%= link_to 'FreeNote', '/', class: "navbar-brand" %>
 		</div>
 
 		<div class="collapse navbar-collapse" id="navbarEexample7">
 			<ul class="nav navbar-nav">
-        <li><%= link_to 'To Do', '' %></li>
-        <li><%= link_to 'JobHunting', '' %></li>
-        <li><%= link_to 'Programming', '' %></li>
-        <li><%= link_to 'YouTube', '' %></li>
-        <li><%= link_to 'Material', '' %></li>
+				<% if params[:controller] == 'to_dos'%>
+					<li class='active'><%= link_to 'To Do', to_dos_path %></li>
+	        <li><%= link_to 'JobHunting', job_huntings_path %></li>
+	        <li><%= link_to 'Programming', programmings_path %></li>
+	        <li><%= link_to 'YouTube', youtubes_path %></li>
+	        <li><%= link_to 'Material', materials_path %></li>
+				<% elsif params[:controller] == 'job_huntings'%>
+					<li><%= link_to 'To Do', to_dos_path %></li>
+					<li class='active'><%= link_to 'JobHunting', job_huntings_path %></li>
+					<li><%= link_to 'Programming', programmings_path %></li>
+					<li><%= link_to 'YouTube', youtubes_path %></li>
+					<li><%= link_to 'Material', materials_path %></li>
+				<% elsif params[:controller] == 'programmings'%>
+					<li><%= link_to 'To Do', to_dos_path %></li>
+					<li><%= link_to 'JobHunting', job_huntings_path %></li>
+					<li class='active'><%= link_to 'Programming', programmings_path %></li>
+					<li><%= link_to 'YouTube', youtubes_path %></li>
+					<li><%= link_to 'Material', materials_path %></li>
+				<% elsif params[:controller] == 'youtubes'%>
+					<li><%= link_to 'To Do', to_dos_path %></li>
+					<li><%= link_to 'JobHunting', job_huntings_path %></li>
+					<li><%= link_to 'Programming', programmings_path %></li>
+					<li class='active'><%= link_to 'YouTube', youtubes_path %></li>
+					<li><%= link_to 'Material', materials_path %></li>
+				<% elsif params[:controller] == 'materials'%>
+					<li><%= link_to 'To Do', to_dos_path %></li>
+					<li><%= link_to 'JobHunting', job_huntings_path %></li>
+					<li><%= link_to 'Programming', programmings_path %></li>
+					<li><%= link_to 'YouTube', youtubes_path %></li>
+					<li class='active'><%= link_to 'Material', materials_path %></li>
+				<% else %>
+					<li><%= link_to 'To Do', to_dos_path %></li>
+					<li><%= link_to 'JobHunting', job_huntings_path %></li>
+					<li><%= link_to 'Programming', programmings_path %></li>
+					<li><%= link_to 'YouTube', youtubes_path %></li>
+					<li><%= link_to 'Material', materials_path %></li>
+				<% end %>
 			</ul>
 		</div>
 	</div>

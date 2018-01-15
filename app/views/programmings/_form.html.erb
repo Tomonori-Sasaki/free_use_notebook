@@ -1,0 +1,32 @@
+<%= form_with(model: programming, local: true) do |form| %>
+  <% if programming.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(programming.errors.count, "error") %> prohibited this programming from being saved:</h2>
+
+      <ul>
+      <% programming.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :rank %>
+    <%= form.number_field :rank, id: :programming_rank %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :programming_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :programming_content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

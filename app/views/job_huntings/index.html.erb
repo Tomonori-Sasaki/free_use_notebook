@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Job Huntings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @job_huntings.each do |job_hunting| %>
+      <tr>
+        <td><%= job_hunting.rank %></td>
+        <td><%= job_hunting.type %></td>
+        <td><%= job_hunting.name %></td>
+        <td><%= job_hunting.content %></td>
+        <td><%= link_to 'Show', job_hunting %></td>
+        <td><%= link_to 'Edit', edit_job_hunting_path(job_hunting) %></td>
+        <td><%= link_to 'Destroy', job_hunting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Job Hunting', new_job_hunting_path %>

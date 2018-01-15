@@ -1,4 +1,6 @@
 class JobHunting < ApplicationRecord
+  self.inheritance_column = :_type_disabled
+  
   validates :rank, presence: true
   validates :type, presence: true
   validates :name, presence: true

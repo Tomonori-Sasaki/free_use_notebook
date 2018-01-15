@@ -1,31 +1,41 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Youtubes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Rank</th>
-      <th>Name</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @youtubes.each do |youtube| %>
-      <tr>
-        <td><%= youtube.rank %></td>
-        <td><%= youtube.name %></td>
-        <td><%= youtube.content %></td>
-        <td><%= link_to 'Show', youtube %></td>
-        <td><%= link_to 'Edit', edit_youtube_path(youtube) %></td>
-        <td><%= link_to 'Destroy', youtube, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="main">
+  <div class="centering">
+    <%= form_tag youtubes_path, :method => 'get' do %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :name => nil %>
+      </p>
     <% end %>
-  </tbody>
-</table>
+    <div class="panel panel-primary" style="width: 100%; margin: auto;">
+      <div class="panel-heading" style="text-align: center;">YouTube List</div>
+      <!-- Table -->
+      <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th style="text-align: center;">rank</th>
+              <th style="text-align: center;">Title</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
 
-<br>
-
-<%= link_to 'New Youtube', new_youtube_path %>
+          <tbody>
+            <% @youtubes.each do |youtube| %>
+              <tr>
+                <td><%= youtube.rank %></td>
+                <td><%= youtube.name %></td>
+                <td><%= link_to 'Show', youtube, class: "btn btn-primary btn-xs" %></td>
+                <td><%= link_to 'Edit', edit_youtube_path(youtube), class: "btn btn-success btn-xs" %></td>
+                <td><%= link_to 'Destroy', youtube, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div><!--/panel-->
+    <br>
+    <div style="text-align: center;">
+      <%= link_to 'New Youtube', new_youtube_path, class: "btn btn-default" %>
+    </div>
+  </div>
+</div>

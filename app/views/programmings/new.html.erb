@@ -1,5 +1,11 @@
-<h1>New Programming</h1>
+<div class="main">
+  <div class="user-form-box">
+    <h1>New Programming</h1>
 
-<%= render 'form', programming: @programming %>
+    <%= render 'form', programming: @programming, class: "btn btn-default"%>
 
-<%= link_to 'Back', programmings_path %>
+    <div style="text-align: center;">
+      <%= link_to 'Back', programmings_path, class: "btn btn-default" %>
+    </div><br>
+  </div>
+</div>

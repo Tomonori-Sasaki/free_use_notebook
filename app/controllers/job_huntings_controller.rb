@@ -4,7 +4,7 @@ class JobHuntingsController < ApplicationController
   # GET /job_huntings
   # GET /job_huntings.json
   def index
-    @job_huntings = JobHunting.all
+    @job_huntings = JobHunting.search(params[:search])
   end
 
   # GET /job_huntings/1

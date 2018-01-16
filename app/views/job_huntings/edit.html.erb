@@ -1,6 +1,13 @@
-<h1>Editing Job Hunting</h1>
+<div class="main">
+  <div class="user-form-box">
+    <h1>Editing Job Hunting</h1>
 
-<%= render 'form', job_hunting: @job_hunting %>
+    <%= render 'form', job_hunting: @job_hunting %>
 
-<%= link_to 'Show', @job_hunting %> |
-<%= link_to 'Back', job_huntings_path %>
+    <div style="text-align: center;">
+      <%= link_to 'Show', @job_hunting, class: "btn btn-default" %>
+      <%= link_to 'Back', job_huntings_path, class: "btn btn-default" %>
+    </div>
+    <br>
+  </div>
+</div>

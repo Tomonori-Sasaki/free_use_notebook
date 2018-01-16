@@ -4,7 +4,7 @@ class YoutubesController < ApplicationController
   # GET /youtubes
   # GET /youtubes.json
   def index
-    @youtubes = Youtube.all
+    @youtubes = Youtube.search(params[:search])
   end
 
   # GET /youtubes/1

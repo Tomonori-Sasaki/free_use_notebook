@@ -1,6 +1,6 @@
 <%= form_with(model: programming, local: true) do |form| %>
   <% if programming.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="alert alert-danger">
       <h2><%= pluralize(programming.errors.count, "error") %> prohibited this programming from being saved:</h2>
 
       <ul>
@@ -13,20 +13,20 @@
 
   <div class="field">
     <%= form.label :rank %>
-    <%= form.number_field :rank, id: :programming_rank %>
-  </div>
+    <%= form.number_field :rank, id: :programming_name, class: "form-control" %>
+  </div><br>
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :programming_name %>
-  </div>
+    <%= form.text_field :name, id: :programming_name, class: "form-control" %>
+  </div><br>
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content, id: :programming_content %>
-  </div>
+    <%= form.text_area :content, id: :programming_content, class: "form-control", style: "height: 200px;" %>
+  </div><br>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <div class="actions" style="text-align: center;">
+    <button class="button8" type="submit">Submit</button>
+  </div><br>
 <% end %>

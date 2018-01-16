@@ -1,6 +1,13 @@
-<h1>Editing Material</h1>
+<div class="main">
+  <div class="user-form-box">
+    <h1>Editing Material</h1>
 
-<%= render 'form', material: @material %>
+    <%= render 'form', material: @material %>
 
-<%= link_to 'Show', @material %> |
-<%= link_to 'Back', materials_path %>
+    <div style="text-align: center;">
+      <%= link_to 'Show', @material, class: "btn btn-default" %>
+      <%= link_to 'Back', materials_path, class: "btn btn-default" %>
+    </div>
+    <br>
+  </div>
+</div>

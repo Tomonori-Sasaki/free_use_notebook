@@ -1,24 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div class="main">
+  <div class="centering">
+    <div class="panel panel-primary" style="width: 100%; margin: auto;">
+      <div class="panel-heading" style="text-align: center;"><%= @job_hunting.name %></div>
+      <!-- Table -->
 
-<p>
-  <strong>Rank:</strong>
-  <%= @job_hunting.rank %>
-</p>
+        <table class="table table-striped table-bordered table-hover">
+          <tbody>
+            <tr>
+              <th>Rank</th><td style="text-align: left;"><%= @job_hunting.rank %></td>
+            </tr>
+            <tr>
+              <th>Type</th><td style="text-align: left;"><%= @job_hunting.type %></td>
+            </tr>
+            <tr>
+              <th style="width: 80px;">Content</th><td style="text-align: left;"><%= @job_hunting.content.gsub(/\r\n|\r|\n/, "<br />").html_safe %></td>
+            </tr>
+          </tbody>
+        </table>
 
-<p>
-  <strong>Type:</strong>
-  <%= @job_hunting.type %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @job_hunting.name %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @job_hunting.content %>
-</p>
-
-<%= link_to 'Edit', edit_job_hunting_path(@job_hunting) %> |
-<%= link_to 'Back', job_huntings_path %>
+    </div><!--/panel-->
+    <br>
+    <div style="text-align: center;">
+      <%= link_to 'Edit', edit_job_hunting_path(@job_hunting), class: "btn btn-default" %>
+      <%= link_to 'Back', job_huntings_path, class: "btn btn-default" %>
+    </div>
+  </div>
+</div>

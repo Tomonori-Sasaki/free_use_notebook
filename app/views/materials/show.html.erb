@@ -1,14 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="main">
+  <div class="centering">
+    <div class="panel panel-primary" style="width: 100%; margin: auto;">
+      <div class="panel-heading" style="text-align: center;"><%= @material.name %></div>
+      <!-- Table -->
 
-<p>
-  <strong>Name:</strong>
-  <%= @material.name %>
-</p>
+        <table class="table table-striped table-bordered table-hover">
+          <tbody>
+            <tr>
+              <th style="width: 80px;">Content</th><td style="text-align: left;"><%= @material.content.gsub(/\r\n|\r|\n/, "<br />").html_safe %></td>
+            </tr>
+          </tbody>
+        </table>
 
-<p>
-  <strong>Content:</strong>
-  <%= @material.content %>
-</p>
-
-<%= link_to 'Edit', edit_material_path(@material) %> |
-<%= link_to 'Back', materials_path %>
+    </div><!--/panel-->
+    <br>
+    <div style="text-align: center;">
+      <%= link_to 'Edit', edit_material_path(@material), class: "btn btn-default" %>
+      <%= link_to 'Back', materials_path, class: "btn btn-default" %>
+    </div>
+  </div>
+</div>

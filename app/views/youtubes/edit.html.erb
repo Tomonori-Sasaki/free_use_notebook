@@ -1,6 +1,13 @@
-<h1>Editing Youtube</h1>
+<div class="main">
+  <div class="user-form-box">
+    <h1>Editing YouTube</h1>
 
-<%= render 'form', youtube: @youtube %>
+    <%= render 'form', youtube: @youtube %>
 
-<%= link_to 'Show', @youtube %> |
-<%= link_to 'Back', youtubes_path %>
+    <div style="text-align: center;">
+      <%= link_to 'Show', @youtube, class: "btn btn-default" %>
+      <%= link_to 'Back', youtubes_path, class: "btn btn-default" %>
+    </div>
+    <br>
+  </div>
+</div>

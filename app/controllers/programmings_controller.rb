@@ -4,7 +4,7 @@ class ProgrammingsController < ApplicationController
   # GET /programmings
   # GET /programmings.json
   def index
-    @programmings = Programming.all
+    @programmings = Programming.search(params[:search])
   end
 
   # GET /programmings/1

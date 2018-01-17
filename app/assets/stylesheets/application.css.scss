@@ -42,16 +42,6 @@ body {
   text-align: center;
 }
 
-.panel-danger {
-    border-color: #b94a48;
-}
-
-.panel-danger>.panel-heading{
-  color: white;
-  background-color: #b94a48;
-  border-color: #b94a48;
-}
-
 button.button8 {
     /* 文字サイズを1.4emに指定 */
     font-size: 1em;
@@ -103,7 +93,8 @@ button.button8:hover {
 
 /* users/new ================================ */
 .user-form-box{
-  max-width: 94%;
+  max-width: 480px;
+  min-width: 240px;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -445,4 +436,18 @@ button.button8:hover {
   width: 100%;
   border-radius: 0 0 2px 2px;
   font-size: 14px;
+}
+
+/* smartPhone */
+@media (max-width: 600px) {
+
+  .user-form-box{
+    max-width: 94%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 50px auto 15px;
+    padding: 10px 10px 0;
+  }
+
 }
